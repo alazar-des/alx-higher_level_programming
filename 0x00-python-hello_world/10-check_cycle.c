@@ -18,8 +18,11 @@ int check_cycle(listint_t *list)
 	{
 		if (current == next_list)
 			return (1);
-		if (next_list->next == NULL)
-			break;
+		if (next_list != NULL)
+		{
+			if (next_list->next == NULL)
+				break;
+		}
 		next_list = (next_list->next)->next;
 		current = current->next;
 	}
