@@ -22,8 +22,8 @@ int check_cycle(listint_t *list)
 		{
 			if (next_list->next == NULL)
 				break;
+			next_list = (next_list->next)->next;
 		}
-		next_list = (next_list->next)->next;
 		current = current->next;
 	}
 	return (0);
