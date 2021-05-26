@@ -49,7 +49,6 @@ def place(location_list, queen, column):
                 location_list += [[queen, col]]
                 if queen + 1 == N:
                     print(location_list)
-                    return True
                 place(location_list, queen + 1, 1)
         del location_list[-1]
         if len(location_list) == 0:
