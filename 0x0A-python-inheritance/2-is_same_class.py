@@ -12,4 +12,4 @@ def is_same_class(obj, a_class):
         True or False depending on the object is whether instance of the class
         or not.
     """
-    return isinstance(obj, a_class)
+    return type(obj).__name__ == a_class.__name__
