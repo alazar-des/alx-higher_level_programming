@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import json
 """Return the json representation of an object"""
 
 
