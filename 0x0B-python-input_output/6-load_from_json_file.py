@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Read json representation from file and return python object."""
-
-
 import json
+
+
 def load_from_json_file(filename):
     """Read json representation from file and return python object.
 
