@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Save json representation of python object in file."""
+"""Save json representation of python object in file.
+"""
 
 
 import json
