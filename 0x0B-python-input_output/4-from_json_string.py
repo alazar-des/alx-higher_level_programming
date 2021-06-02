@@ -3,7 +3,6 @@
 
 
 import Json
-
 def from_json_string(my_str):
     """Return the python data structure from json representation.
 
