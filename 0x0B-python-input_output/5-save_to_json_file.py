@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import json
 """Save json representation of python object in file."""
 
 
+import json
 def save_to_json_file(my_obj, filename):
     """Save json representation of python object in file.
     open file for write and write the json string to it. if doesn't exist
