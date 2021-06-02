@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """checks if instance is an instance of given class"""
 
-
+import json
 def is_kind_of_class(obj, a_class):
     """Return True if obj is instance of a_class otherwise False.
 
