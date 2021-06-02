@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """A class with an area public function"""
 
-
+import json
 class BaseGeometry:
     """A class with an area public function"""
     def area(self):
