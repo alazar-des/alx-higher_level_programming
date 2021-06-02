@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """check if class is subclass."""
 
-
+import json
 def inherits_from(obj, a_class):
     """check if class is subclass.
 
