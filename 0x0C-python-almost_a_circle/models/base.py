@@ -131,3 +131,42 @@ class Base:
         with open(filename, 'w') as fw:
             writer = csv.writer(fw)
             [writer.writerow(obj_dict.values()) for obj_dict in list_objs_dict]
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Load csv representaion of an object from file <class name>.csv and
+        creates an object.
+
+        Yields:
+            The object created if file exist otherwise empty list.
+        """
+        dicts = []
+        if str(cls.__dict__['__module__']).find('rectangle') >= 0:
+            keys = ['id', 'width', 'height', 'x', 'y']
+            filename = 'Rectangle.csv'
+            try:
+                with open(filename, 'r') as fr:
+                    reader = csv.reader(fr)
+                    for values in reader:
+                        diction = {}
+                        for idx, value in enumerate(values):
+                            diction[keys[idx]] = value
+                        dicts.append(diction)
+                return [cls.create(**dicn) for dicn in dicts]
+            except FileNotFoundError:
+                print(filename)
+                return []
+        elif str(cls.__dict__['__module__']).find('square') >= 0:
+            keys = ['id', 'size', 'x', 'y']
+            filename = 'Square.csv'
+            try:
+                with open(filename, 'r') as fr:
+                    reader = csv.reader(fr)
+                    for values in reader:
+                        diction = {}
+                        for idx, value in enumerate(values):
+                            diction[keys[idx]] = value
+                        dicts.append(diction)
+                return [cls.create(**dicn) for dicn in dicts]
+            except FileNotFoundError:
+                return []
