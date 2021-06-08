@@ -7,18 +7,18 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class TestBase(unittest.TestCase):
+class Monolithic(unittest.TestCase):
     """A test class for all base class methods.
     """
-    def testall(self):
+    def test_all(self):
         b1 = Base()
-        self.assertEqual(b1.id, 1)
+        self.assertAlmostEqual(b1.id, 1)
 
         b2 = Base()
-        self.assertEqual(b2.id, 2)
+        self.assertAlmostEqual(b2.id, 2)
 
         b3 = Base(10)
-        self.assertEqual(b3.id, 10)
+        self.assertAlmostEqual(b3.id, 10)
 
         b4 = Base()
         self.assertEqual(b4.id, 3)
@@ -177,3 +177,6 @@ class TestBase(unittest.TestCase):
         s1_dictionary = r1.to_dictionary()
         s2 = Square.create(**s1_dictionary)
         self.assertEqual(str(s2), '[Square] (30) 1/0 - 3')
+
+if __name__ == '__main__':
+    unittest.main()
