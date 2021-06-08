@@ -1,6 +1,7 @@
 #!/usr/bin/python3
+"""Save json representation of python object in file.
+"""
 import json
-"""Save json representation of python object in file."""
 
 
 def save_to_json_file(my_obj, filename):

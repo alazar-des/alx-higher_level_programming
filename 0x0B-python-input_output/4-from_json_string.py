@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Return the json representation of an object"""
+"""Return python object from json string.
+"""
+import json
 
 
 def from_json_string(my_str):
