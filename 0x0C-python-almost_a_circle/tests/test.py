@@ -167,3 +167,13 @@ class TestBase(unittest.TestCase):
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(json_dictionary,
                          '[{"id": 29, "width": 10, "height": 7, "x": 2, "y": 8}]')
+
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual(str(r2), '[Rectangle] (30) 1/0 - 3/5')
+
+        s1 = Square(3, 5, 1)
+        s1_dictionary = r1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual(str(s2), '[Square] (30) 1/0 - 3')
