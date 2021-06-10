@@ -97,7 +97,7 @@ class Rectangle(Base):
         """
         if args != ():
             for idx, arg in enumerate(args[:5]):
-                self.__dict__[list(self.__dict__.keys())[idx]] = arg
+                self.__dict__.update({list(self.__dict__.keys())[idx]: arg})
         elif kwargs is not None:
             for key, value in kwargs.items():
                 if key in list(self.__dict__.keys()):
