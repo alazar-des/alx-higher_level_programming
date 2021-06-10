@@ -95,16 +95,17 @@ class Rectangle(Base):
             kwargs (dict): keyword argument, the attrbute to be updated is
                 given as key and value pair
         """
+        attrbs = self.__dict__
         if args != ():
             for idx, arg in enumerate(args[:5]):
-                self.__dict__.update({list(self.__dict__.keys())[idx]: arg})
+                attrbs[list(attrbs.keys())[idx]] = arg
         elif kwargs is not None:
             for key, value in kwargs.items():
-                if key in list(self.__dict__.keys()):
-                    self.__dict__[key] = value
+                if key in list(attrbs.keys()):
+                    attrbs[key] = value
                 elif '_' + __class__.__name__ + '__' + key \
-                     in list(self.__dict__.keys()):
-                    self.__dict__['_' + __class__.__name__ + '__' + key] = value
+                     in list(attrbs.keys()):
+                    attrbs['_' + __class__.__name__ + '__' + key] = value
 
     def to_dictionary(self):
         """Return the dictionary representaion of instance attrbutes.
