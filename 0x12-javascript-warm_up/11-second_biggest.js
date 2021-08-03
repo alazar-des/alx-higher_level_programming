@@ -5,7 +5,7 @@ let maxIdx; let temp; let i = 0;
 while (i < 2) {
   maxIdx = i;
   for (let j = i + 1; j < args.length; j++) {
-      if (parseInt(args[j]) > parseInt(args[maxIdx])) {
+    if (parseInt(args[j]) > parseInt(args[maxIdx])) {
       maxIdx = j;
     }
   }
