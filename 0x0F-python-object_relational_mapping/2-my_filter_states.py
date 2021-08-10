@@ -19,7 +19,6 @@ if __name__ == "__main__":
     # sql query
     sql = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY name".format(
         sys.argv[4])
-    print(sql)
     try:
         cursor.execute(sql)
         results = cursor.fetchall()
