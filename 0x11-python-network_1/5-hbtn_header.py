@@ -6,5 +6,6 @@ import requests
 import sys
 
 
-resp = requests.get(sys.argv[1])
-print(resp.headers['X-Request-Id'])
+if __name__ == "__main__":
+    resp = requests.get(sys.argv[1])
+    print(resp.headers['X-Request-Id'])
