@@ -13,7 +13,7 @@ if __name__ == "__main__":
         resp = requests.post('http://0.0.0.0:5000/search_user', data=payload)
 
         r_json = resp.json()
-        if r_json:
+        if r_json and type(r_json) == dict:
             print("[{}] {}".format(r_json['id'], r_json['name']))
         elif r_json == {}:
             print("No result")
