@@ -4,6 +4,10 @@
 
 
 def find_peak(list_of_integers):
+    """ Return the max number from a list.
+
+    list_of_integers: list
+    """
     if len(list_of_integers) == 0:
         return None
     peak = list_of_integers[0]
