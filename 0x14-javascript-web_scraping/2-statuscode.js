@@ -5,5 +5,5 @@ const myArgs = process.argv.slice(2);
 
 request(myArgs[0], function (error, response, body) {
   if (error) console.error('error:', error);
-  console.log('code: ', response && response.statusCode);
+  console.log('code:', response && response.statusCode);
 });
