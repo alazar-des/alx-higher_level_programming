@@ -9,12 +9,14 @@ let count = 0;
 
 request(path, options, function (error, response, body) {
   if (error) console.error('error:', error);
-  for (let i = 0; i < body.results.length; i++) {
-    for (let j = 0; j < body.results[i].characters.length; j++) {
-      if (charId === body.results[i].characters[j]) {
-        count++;
+  if (!error && response.statusCode === 200) {
+    for (let i = 0; i < body.results.length; i++) {
+      for (let j = 0; j < body.results[i].characters.length; j++) {
+        if (charId === body.results[i].characters[j]) {
+          count++;
+        }
       }
     }
+    console.log(count);
   }
-  console.log(count);
 });
